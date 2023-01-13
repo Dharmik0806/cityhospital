@@ -1,5 +1,32 @@
 import React from 'react';
+import List from '../../componant/list/List';
 
+const data = [
+    {
+        Name : "Dr. Ashish Sabharwal ",
+        Des : "Chief Medical Officer",
+        Txt : "Duis sagittis rutrum neque, quis tincidunt arcu pretium ac.",
+        Img : "../assets/img/doctors/doctors-1.jpg"
+    },
+    {
+        Name : "Dr. Bipin S Walia ",
+        Des : "Anesthesiologist",
+        Txt : "Aenean ac turpis ante. Mauris velit sapien.",
+        Img : "../assets/img/doctors/doctors-2.jpg"
+    },
+    {
+        Name : "Dr. Aditya Gupta ",
+        Des : "Cardiology",
+        Txt : "Curabitur luctus eleifend odio. Phasellus placerat mi.",
+        Img : "../assets/img/doctors/doctors-3.jpg"
+    },
+    {
+        Name : "Dr. Amandeep Singh Dhillon ",
+        Des : "Neurosurgeon",
+        Txt : "Morbi vulputate, tortor nec pellentesque molestie, eros nisi ornare purus.",
+        Img : "../assets/img/doctors/doctors-4.jpg"
+    }
+]
 function Doctors(props) {
     return (
         <section id="doctors" className="doctors">
@@ -10,7 +37,10 @@ function Doctors(props) {
                         tincidunt viverra erat. Quisque in lectus id nulla viverra sodales in a risus. Aliquam ut sem ex. Duis viverra
                         ipsum lacus, ut pharetra arcu sagittis nec. Phasellus a eleifend elit.</p>
                 </div>
-                <div className="row">
+
+                <List listdata={data} />
+                
+                {/* <div className="row">
                     <div className="col-lg-6">
                         <div className="member d-flex align-items-start">
                             <div className="pic"><img src="../assets/img/doctors/doctors-1.jpg" className="img-doctor" alt /></div>
@@ -75,7 +105,9 @@ function Doctors(props) {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
+
+                
             </div>
         </section>
 

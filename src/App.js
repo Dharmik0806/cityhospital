@@ -12,6 +12,7 @@ import Sighup from './container/auth/Sighup';
 import Signin from './container/signin/Signin';
 import ForgatePassword from './container/forgatePass/ForgatePassword';
 import Auth from './container/auth/Auth';
+import Medicine from './container/medicine/Medicine';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         {/* <Route exact path={"/signin"} component={Signin} /> */}
         {/* <Route exact path={"/forgatePass"} component={ForgatePassword} /> */}
         <Route exact path={"/auth"} component={Auth} />
+        <Route exact path={"/medicine"} component={Medicine} />
 
       </Switch>
       <Footer />

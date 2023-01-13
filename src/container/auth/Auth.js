@@ -6,42 +6,51 @@ import { NavLink } from 'react-router-dom'
 function Auth(props) {
 
     const [type, setType] = useState('signup');
-
+    const [reset, setReset] = useState(false)
     return (
         <div className='signup_container container'>
             <Form>
 
                 {
-                    type === 'signup' ?
-                        <FormGroup>
-                            <Label for="Fname">
-                                User Name
-                            </Label>
-                            <Input
-                                id="Fname"
-                                name="email"
-                                placeholder="Enter Full Name"
-                                type="email"
-                            />
-                        </FormGroup>
-                        :
-                        null
+                    reset === true ? <h1>Reset Password</h1> :
+                        type === 'signup' ?
+                            <h1>Sign up</h1>
+                            :
+                            <h1>Log in </h1>
+                }
+                {
+                    reset === true ? null :
+                        type === 'signup' ?
+                            <FormGroup>
+                                <Label for="Fname">
+                                    User Name
+                                </Label>
+                                <Input
+                                    id="Fname"
+                                    name="email"
+                                    placeholder="Enter Full Name"
+                                    type="email"
+                                />
+                            </FormGroup>
+                            :
+                            null
                 }
 
                 {
-                    type === 'signup' ?
-                        <FormGroup>
-                            <Label for="Mono">
-                                User Name
-                            </Label>
-                            <Input
-                                id="Mono"
-                                name="email"
-                                placeholder="Mo no"
-                                type="mono"
-                            />
-                        </FormGroup> :
-                        null
+                    reset === true ? null :
+                        type === 'signup' ?
+                            <FormGroup>
+                                <Label for="Mono">
+                                    User Name
+                                </Label>
+                                <Input
+                                    id="Mono"
+                                    name="email"
+                                    placeholder="Mo no"
+                                    type="mono"
+                                />
+                            </FormGroup> :
+                            null
                 }
 
                 <FormGroup>
@@ -56,50 +65,56 @@ function Auth(props) {
                     />
                 </FormGroup>
 
-                <FormGroup>
-                    <Label for="userPassword">
-                        Password
-                    </Label>
-                    <Input
-                        id="userPassword"
-                        name="password"
-                        placeholder="password"
-                        type="password"
-                    />
-                </FormGroup>
-
                 {
-                    type === 'signup' ?
+                    reset === true ? null :
                         <FormGroup>
-                            <Label for="exampleText">
-                                Date
+                            <Label for="userPassword">
+                                Password
                             </Label>
                             <Input
-                                id="exampleText"
-                                name="text"
-                                placeholder="D.O.B"
-                                type="date"
+                                id="userPassword"
+                                name="password"
+                                placeholder="password"
+                                type="password"
                             />
                         </FormGroup>
-                        :
-                        null
+
                 }
 
                 {
-                    type === 'signup' ?
-                        <FormGroup>
-                            <Label for="exampleText">
-                                Text Area
-                            </Label>
-                            <Input
-                                id="exampleText"
-                                name="text"
-                                placeholder="Address"
-                                type="textarea"
-                            />
-                        </FormGroup>
-                        :
-                        null
+                    reset === true ? null :
+                        type === 'signup' ?
+                            <FormGroup>
+                                <Label for="exampleText">
+                                    Date
+                                </Label>
+                                <Input
+                                    id="exampleText"
+                                    name="text"
+                                    placeholder="D.O.B"
+                                    type="date"
+                                />
+                            </FormGroup>
+                            :
+                            null
+                }
+
+                {
+                    reset === true ? null :
+                        type === 'signup' ?
+                            <FormGroup>
+                                <Label for="exampleText">
+                                    Text Area
+                                </Label>
+                                <Input
+                                    id="exampleText"
+                                    name="text"
+                                    placeholder="Address"
+                                    type="textarea"
+                                />
+                            </FormGroup>
+                            :
+                            null
                 }
 
                 <FormGroup check>
@@ -112,14 +127,34 @@ function Auth(props) {
                         Check me out
                     </Label>
                 </FormGroup>
-                
+
             </Form>
 
 
             {/* <div> */}
             {/* <NavLink exact   to="/signin">Already Have An Account ?</NavLink> */}
-            <a onClick={() => { setType('login') }} >Already Have An Account ?</a>
+            {/* <a onClick={() => { setType('login') }} >Already Have An Account ?</a> */}
+            {/* <p> <a onClick={() => { setReset(true) }} >Forgot password ?</a></p> */}
             {/* </div> */}
+
+            {
+                reset ?
+                    <>
+                        <a onClick={() => { setType('login'); setReset(false) }} >Already Have An Account? Login</a>
+                    </>
+                    :
+                    type === 'signup' ?
+                        // <p> <a onClick={() => { setType('signup') }} >login ?</a></p>
+                        <a onClick={() => { setType('login'); setReset(false) }} >Already Have An Account? Login</a>
+                        :
+                        <>
+                            <a onClick={() => { setType('signup'); setReset(false) }} >Create an account? Signup</a> <br />
+                            <a onClick={() => { setReset(true) }} >Forgot password?</a>
+                        </>
+
+            }
+
+
         </div>
     );
 }
