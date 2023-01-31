@@ -19,7 +19,6 @@ function App() {
     <>
       <Header />
       {/* <Home /> */}
-
       <Switch>
         <Route exact path={"/"} component={Home} />
         <Route exact path={"/about"} component={About} />
@@ -31,7 +30,6 @@ function App() {
         {/* <Route exact path={"/forgatePass"} component={ForgatePassword} /> */}
         <Route exact path={"/auth"} component={Auth} />
         <Route exact path={"/medicine"} component={Medicine} />
-
       </Switch>
       <Footer />
     </>
