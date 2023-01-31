@@ -13,6 +13,8 @@ import Signin from './container/signin/Signin';
 import ForgatePassword from './container/forgatePass/ForgatePassword';
 import Auth from './container/auth/Auth';
 import Medicine from './container/medicine/Medicine';
+import PublicRoute from './Routes/PublicRoute';
+import PrivateRoute from './Routes/PrivateRoute';
 
 function App() {
   return (
@@ -20,16 +22,13 @@ function App() {
       <Header />
       {/* <Home /> */}
       <Switch>
-        <Route exact path={"/"} component={Home} />
-        <Route exact path={"/about"} component={About} />
-        <Route exact path={"/Contact"} component={Contact} />
-        <Route exact path={"/doctors"} component={Doctors} />
-        <Route exact path={"/department"} component={Department} />
-        {/* <Route exact path={"/department"} component={Department} /> */}
-        {/* <Route exact path={"/signin"} component={Signin} /> */}
-        {/* <Route exact path={"/forgatePass"} component={ForgatePassword} /> */}
-        <Route exact path={"/auth"} component={Auth} />
-        <Route exact path={"/medicine"} component={Medicine} />
+        <PublicRoute exact path={"/"} component={Home} />
+        <PublicRoute exact path={"/about"} component={About} />
+        <PublicRoute exact path={"/Contact"} component={Contact} />
+        <PublicRoute exact path={"/doctors"} component={Doctors} />
+        <PublicRoute exact path={"/department"} component={Department} />
+        <PublicRoute exact path={"/auth"}  restricated={true} component={Auth} />
+        <PrivateRoute exact path={"/medicine"}  component={Medicine} />
       </Switch>
       <Footer />
     </>

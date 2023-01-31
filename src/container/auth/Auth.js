@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
-import { NavLink } from 'react-router-dom'
+import { NavLink, Route } from 'react-router-dom'
+import PrivateRoute from '../../Routes/PrivateRoute';
 // import Signin from '../signin/Signin';
 
 function Auth(props) {
 
-    const [type, setType] = useState('signup');
+    const [type, setType] = useState('login');
     const [reset, setReset] = useState(false)
+
+    const logineDetails = () => {
+        localStorage.setItem("logine" , 123)
+    }
+
     return (
         <div className='signup_container container'>
             <Form>
@@ -128,6 +134,8 @@ function Auth(props) {
                     </Label>
                 </FormGroup>
 
+                <input type = "submit" value="Submit" onClick={() => logineDetails()} />
+
             </Form>
 
 
@@ -160,3 +168,8 @@ function Auth(props) {
 }
 
 export default Auth;
+
+
+// Route => Public and PrivateRoute
+
+// public => retricted 
