@@ -59,7 +59,7 @@ function Medicine(props) {
                         ipsum lacus, ut pharetra arcu sagittis nec. Phasellus a eleifend elit.</p>
                 </div>
                 {/* <img src="assets/img/medicine/first_medicine.jpg" className="img-doctor" alt='img_1' />  */}
-
+                
                 <List listdata={data} />
             </div>
         </section>

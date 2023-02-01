@@ -1,16 +1,17 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import { logineDetails } from '../utility/Uitility';
+import { loginData } from '../utility/Uitility';
 
-function PrivateRoute({component : Component , restricated = false , ...rest}) {
+function PrivateRoute({component : Component , restricted = false , ...rest}) {
+    console.log(loginData());
     return (
        <Route 
-       {...rest}
-       render={(props) => {
-            return(
-                logineDetails() ?  <Component {...props} /> : <Redirect to="/auth"/> 
-            )
-       }}
+            {...rest}
+            render = {(props) => {
+                return(
+                    loginData() ? <Component {...props}/> : <Redirect to="/auth" />
+                )
+            }}
        />
     );
 }

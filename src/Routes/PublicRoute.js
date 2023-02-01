@@ -1,26 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import { logineDetails } from '../utility/Uitility';
+import { loginData } from '../utility/Uitility';
 
-function PublicRoute({ component: Component, restricated = false, ...rest }) {
-    console.log(logineDetails() , restricated );
+function PublicRoute({component : Component , restricted = false , ...rest}) {
     return (
-       <Route
+        <Route 
             {...rest}
             render={(props) => {
                 return(
-                    logineDetails() && restricated ? <Redirect to="/" /> : <Component {...props}/>
+                    loginData() && restricted ? <Redirect to="/"/> : <Component {...props} />
                 )
             }}
-       />
-    )
+        />
+    );
 }
 
 export default PublicRoute;
-
-// to={...rest}
-// render={(props) => {
-//     return (
-//         logineDetails() && restricated ? <Redirect to="/> : <componant />
-   
-//  )

@@ -1,0 +1,30 @@
+/* ****************************************SIGN IN COMPONENT ****************************************************** */
+/* ________________________________________________________________________________________________________________ */
+
+.signup_container{
+    width: 500px !important;
+    padding:20px 20px 20px 20px;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 5px burlywood;
+    /* border: 2px solid pink; */
+  }
+
+
+
+
+.sign-btn{
+  background: #FF6337 !important;
+  border: 0;
+  padding: 10px 35px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+  margin: 10px 0px 10px 170px;
+}
+
+.sign-btn:hover{
+  background: #6379eb !important;
+ 
+}

@@ -1,9 +1,9 @@
-export const logineDetails = () => {
-    let data = localStorage.getItem("logine");
+export const loginData = () => {
+    let key = JSON.parse(localStorage.getItem("user"))
 
-    if(data) {
+    if (key) {
         return true;
-    }else{
-        return false
+    } else {
+        return false;
     }
 }

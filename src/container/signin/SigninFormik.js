@@ -1,13 +1,15 @@
+//Formik and Yup only
+
 import React from 'react';
 import { Form, FormGroup, Label, Input , Button } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
-function Signin(props) {
+function SigninFormik(props) {
     return (
         <div className='signup_container container'>
             <Form>
                 <FormGroup>
                     <Label for="Fname">
-                        User Name
+                        User Name (formik and yup)
                     </Label>
                     <Input
                         id="Fname"
@@ -47,4 +49,4 @@ function Signin(props) {
     );
 }
 
-export default Signin;
+export default SigninFormik;

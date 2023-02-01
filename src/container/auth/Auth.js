@@ -1,3 +1,5 @@
+//only conditional rendaring not do not get errore 
+
 import React, { useState } from 'react';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import { NavLink, Route } from 'react-router-dom'
@@ -9,20 +11,22 @@ function Auth(props) {
     const [type, setType] = useState('login');
     const [reset, setReset] = useState(false)
 
-    const logineDetails = () => {
-        localStorage.setItem("logine" , 123)
+    const loginData = () => {
+        localStorage.setItem("user", 123);
     }
 
+    console.log(localStorage.getItem("user"));
+
     return (
-        <div className='signup_container container'>
+        <div className='signup_container container' id='signin'>
             <Form>
 
                 {
-                    reset === true ? <h1>Reset Password</h1> :
+                     reset === true ? <h1>Reset Password</h1> :
                         type === 'signup' ?
                             <h1>Sign up</h1>
                             :
-                            <h1>Log in </h1>
+                            <h1>Log in .......... </h1>
                 }
                 {
                     reset === true ? null :
@@ -134,16 +138,9 @@ function Auth(props) {
                     </Label>
                 </FormGroup>
 
-                <input type = "submit" value="Submit" onClick={() => logineDetails()} />
+                <input type="submit" onClick={() => loginData()} value="Submit" />
 
             </Form>
-
-
-            {/* <div> */}
-            {/* <NavLink exact   to="/signin">Already Have An Account ?</NavLink> */}
-            {/* <a onClick={() => { setType('login') }} >Already Have An Account ?</a> */}
-            {/* <p> <a onClick={() => { setReset(true) }} >Forgot password ?</a></p> */}
-            {/* </div> */}
 
             {
                 reset ?

@@ -9,28 +9,36 @@ import Department from './container/department/Department';
 import Doctors from './container/doctors/Doctors';
 import Contact from './container/Contact/Contact';
 import Sighup from './container/auth/Sighup';
-import Signin from './container/signin/Signin';
 import ForgatePassword from './container/forgatePass/ForgatePassword';
 import Auth from './container/auth/Auth';
-import Medicine from './container/medicine/Medicine';
 import PublicRoute from './Routes/PublicRoute';
 import PrivateRoute from './Routes/PrivateRoute';
+import SigninFormik from './container/signin/SigninFormik';
+import Signin from './container/auth/Signin';
+import Layout from './Admin/component/layout/Layout';
+import Medicine from './Admin/container/Medicine';
 
 function App() {
   return (
     <>
-      <Header />
-      {/* <Home /> */}
+      {/* <Header />
       <Switch>
         <PublicRoute exact path={"/"} component={Home} />
         <PublicRoute exact path={"/about"} component={About} />
         <PublicRoute exact path={"/Contact"} component={Contact} />
         <PublicRoute exact path={"/doctors"} component={Doctors} />
         <PublicRoute exact path={"/department"} component={Department} />
-        <PublicRoute exact path={"/auth"}  restricated={true} component={Auth} />
-        <PrivateRoute exact path={"/medicine"}  component={Medicine} />
+        <PublicRoute exact path={"/auth"} restricted={true} component={Signin} />
+        <PrivateRoute exact path={"/medicine"} component={Medicine} />
       </Switch>
-      <Footer />
+      <Footer /> */}
+
+      <Switch>
+        <Layout>
+        <Route exact path={"/Medision"} component={Medicine} />
+
+        </Layout>
+      </Switch>
     </>
   );
 }
