@@ -16,29 +16,33 @@ import PrivateRoute from './Routes/PrivateRoute';
 import SigninFormik from './container/signin/SigninFormik';
 import Signin from './container/auth/Signin';
 import Layout from './Admin/component/layout/Layout';
-import Medicine from './Admin/container/Medicine';
+import MedicineCity from './Admin/container/MedicintCity';
+// import Medicine from './Admin/container/Medicine';
+// import MedicineCity from './Admin/container/MedicintCity';
+import Medicine from './container/medicine/Medicine';
+import DoctoreCity from './Admin/container/DoctoreCity';
 
 function App() {
   return (
     <>
       {/* <Header />
-      <Switch>
-        <PublicRoute exact path={"/"} component={Home} />
-        <PublicRoute exact path={"/about"} component={About} />
-        <PublicRoute exact path={"/Contact"} component={Contact} />
-        <PublicRoute exact path={"/doctors"} component={Doctors} />
-        <PublicRoute exact path={"/department"} component={Department} />
-        <PublicRoute exact path={"/auth"} restricted={true} component={Signin} />
-        <PrivateRoute exact path={"/medicine"} component={Medicine} />
-      </Switch>
-      <Footer /> */}
+       <Switch>
+         <PublicRoute exact path={"/"} component={Home} />
+         <PublicRoute exact path={"/about"} component={About} />
+         <PublicRoute exact path={"/Contact"} component={Contact} />
+         <PublicRoute exact path={"/doctors"} component={Doctors} />
+         <PublicRoute exact path={"/department"} component={Department} />
+         <PublicRoute exact path={"/auth"} restricted={true} component={Signin} />
+         <PrivateRoute exact path={"/medicine"} component={Medicine} />
+       </Switch>
+       <Footer /> */}
 
-      <Switch>
-        <Layout>
-        <Route exact path={"/Medision"} component={Medicine} />
-
-        </Layout>
-      </Switch>
+      <Layout>
+        <Switch>
+          <Route exact path={"/MedisionCity"} component={MedicineCity} />
+          <Route exact path={"/DocterCity"} component={DoctoreCity} />
+        </Switch>
+      </Layout>
     </>
   );
 }

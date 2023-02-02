@@ -22,6 +22,7 @@ import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import VaccinesIcon from '@mui/icons-material/Vaccines';
 import HomeIcon from '@mui/icons-material/Home';
 import { NavLink } from 'react-router-dom';
+import MedicationIcon from '@mui/icons-material/Medication';
 
 const drawerWidth = 240;
 
@@ -84,7 +85,9 @@ export default function Layout({children}) {
 
     const menu = [
         // { label: "Home", to: "/", icon: <HomeIcon /> },
-        { label: "Medision", to: "/medision", icon: <LocalHospitalIcon /> }
+        // { label: "Medision", to: "/medision", icon: <LocalHospitalIcon /> },
+        { label: "Medision", to: "/MedisionCity", icon: <LocalHospitalIcon /> },
+        { label: "Doctore", to: "/DocterCity", icon: <MedicationIcon /> }
         // { label: "Doctor", to: "/doctor", icon: <VaccinesIcon /> },
         // { label: "signinform", to: "/signinform", icon: <HomeIcon /> }
     ]

@@ -15,7 +15,7 @@ function List({ listdata }) {
                                         <div className="member d-flex align-items-start">
                                             <div className="pic"><img src={l.Img} className="img-doctor" alt /></div>
                                             <div className="member-info">
-                                                <h4>{l.Name}</h4>
+                                                <h4>{l.Mname}</h4>
                                                 {/* <span>{l.Des}</span>  */}
                                                 {/* <p>{l.Txt}</p>  */}
 
@@ -23,7 +23,8 @@ function List({ listdata }) {
                                                 {l.Des === undefined || l.Txt === undefined ?
                                                     <>
                                                         <span>Price : {l.price}</span>
-                                                        <p>Quantity : {l.Qua}</p>
+                                                        <p>Quantity : {l.qua}</p>
+                                                        <p>id : {l.id}</p>
                                                     </>
                                                     :
                                                     <>
